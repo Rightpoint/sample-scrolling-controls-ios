@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollingControls" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qdU-7z-dTw">
+                                <rect key="frame" x="0.0" y="20" width="187.5" height="647"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUm-fk-ry1">
+                                        <rect key="frame" x="20" y="200" width="147.5" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="GCa-4x-ihk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="Scroll Me!" backgroundImage="Blue Normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="Blue Pressed"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Normal Scroll View 👎" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPf-ij-w8s">
+                                        <rect key="frame" x="20" y="20" width="147.5" height="42.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.76822806838892399" green="0.83616670460491371" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="KPf-ij-w8s" firstAttribute="leading" secondItem="OUm-fk-ry1" secondAttribute="leading" id="00l-EH-LX0"/>
+                                    <constraint firstItem="KPf-ij-w8s" firstAttribute="trailing" secondItem="OUm-fk-ry1" secondAttribute="trailing" id="6vB-QO-Qza"/>
+                                    <constraint firstItem="OUm-fk-ry1" firstAttribute="leading" secondItem="qdU-7z-dTw" secondAttribute="leading" constant="20" id="hAp-b3-oQA"/>
+                                    <constraint firstItem="OUm-fk-ry1" firstAttribute="top" secondItem="qdU-7z-dTw" secondAttribute="top" constant="200" id="hvQ-GV-8Uv"/>
+                                    <constraint firstAttribute="bottom" secondItem="OUm-fk-ry1" secondAttribute="bottom" id="lrG-hh-T2U"/>
+                                    <constraint firstAttribute="trailing" secondItem="OUm-fk-ry1" secondAttribute="trailing" constant="-20" id="s5Q-y9-1Wf"/>
+                                    <constraint firstItem="KPf-ij-w8s" firstAttribute="top" secondItem="qdU-7z-dTw" secondAttribute="top" constant="20" id="vZr-Wa-ats"/>
+                                </constraints>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nqA-XN-2Gi" customClass="ControlContainableCollectionView" customModule="ScrollingControls" customModuleProvider="target">
+                                <rect key="frame" x="187.5" y="20" width="187.5" height="647"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bx-fM-cAk">
+                                        <rect key="frame" x="20" y="200" width="147.5" height="65"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="Scroll Me!" backgroundImage="Red Normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="Red Pressed"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Control-Containable Scroll View 👍" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdm-rM-h7I">
+                                        <rect key="frame" x="20" y="20" width="147.5" height="64.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.83879087004732245" blue="0.83171337404824008" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gdm-rM-h7I" firstAttribute="trailing" secondItem="8Bx-fM-cAk" secondAttribute="trailing" id="5Ck-0O-VPW"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Bx-fM-cAk" secondAttribute="trailing" constant="-20" id="Az4-1a-nVK"/>
+                                    <constraint firstItem="8Bx-fM-cAk" firstAttribute="top" secondItem="nqA-XN-2Gi" secondAttribute="top" constant="200" id="Jc8-Da-oOL"/>
+                                    <constraint firstItem="gdm-rM-h7I" firstAttribute="leading" secondItem="8Bx-fM-cAk" secondAttribute="leading" id="POC-Cj-ux3"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Bx-fM-cAk" secondAttribute="bottom" id="SDo-Ha-HZK"/>
+                                    <constraint firstItem="gdm-rM-h7I" firstAttribute="top" secondItem="nqA-XN-2Gi" secondAttribute="top" constant="20" id="ZxQ-fZ-Pfu"/>
+                                    <constraint firstItem="8Bx-fM-cAk" firstAttribute="leading" secondItem="nqA-XN-2Gi" secondAttribute="leading" constant="20" id="iIK-fn-j59"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hxs-Og-Sgl" userLabel="Vertical Hairline">
+                                <rect key="frame" x="186" y="20" width="1" height="647"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="4kC-Ok-1xl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MnX-JK-nWk" userLabel="Horizontal Hairline">
+                                <rect key="frame" x="0.0" y="20" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="GOx-KL-hqJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qdU-7z-dTw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0ob-Nx-9zj"/>
+                            <constraint firstItem="nqA-XN-2Gi" firstAttribute="leading" secondItem="qdU-7z-dTw" secondAttribute="trailing" id="1e2-en-G9b"/>
+                            <constraint firstItem="nqA-XN-2Gi" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="1sK-ir-dRh"/>
+                            <constraint firstItem="OUm-fk-ry1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" constant="-40" id="78B-Rv-EAC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nqA-XN-2Gi" secondAttribute="bottom" id="AqB-4Y-GVI"/>
+                            <constraint firstItem="8Bx-fM-cAk" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" constant="-40" id="Dd0-7U-2rk"/>
+                            <constraint firstItem="Hxs-Og-Sgl" firstAttribute="bottom" secondItem="qdU-7z-dTw" secondAttribute="bottom" id="Fhe-0L-0ij"/>
+                            <constraint firstItem="nqA-XN-2Gi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GjX-Hl-xIN"/>
+                            <constraint firstItem="MnX-JK-nWk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UuH-cR-Ttv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qdU-7z-dTw" secondAttribute="bottom" id="asT-eE-5na"/>
+                            <constraint firstItem="Hxs-Og-Sgl" firstAttribute="trailing" secondItem="qdU-7z-dTw" secondAttribute="trailing" id="bKA-Gy-xjV"/>
+                            <constraint firstItem="Hxs-Og-Sgl" firstAttribute="top" secondItem="qdU-7z-dTw" secondAttribute="top" id="dj2-2f-msF"/>
+                            <constraint firstItem="qdU-7z-dTw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="gAX-25-kIB"/>
+                            <constraint firstItem="qdU-7z-dTw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n8n-qZ-27v"/>
+                            <constraint firstItem="8Bx-fM-cAk" firstAttribute="height" secondItem="OUm-fk-ry1" secondAttribute="height" id="obh-Tf-1f4"/>
+                            <constraint firstAttribute="trailing" secondItem="MnX-JK-nWk" secondAttribute="trailing" id="x2S-CX-HVI"/>
+                            <constraint firstItem="MnX-JK-nWk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yvN-vT-cvV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="controlContainableScrollView" destination="nqA-XN-2Gi" id="42A-4g-Wt3"/>
+                        <outlet property="normalScrollView" destination="qdU-7z-dTw" id="elb-ur-Bvi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Blue Normal" width="30" height="16"/>
+        <image name="Blue Pressed" width="30" height="16"/>
+        <image name="Red Normal" width="30" height="16"/>
+        <image name="Red Pressed" width="30" height="16"/>
+    </resources>
+</document>
