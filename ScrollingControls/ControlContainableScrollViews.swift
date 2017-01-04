@@ -15,14 +15,21 @@ import UIKit
 // prevents scrolling and makes the app feel broken.
 //
 // The UITextInput exception is for cases where you have a text field
-// or a label in a scroll view. If you press and hold there, you want
+// or a text view in a scroll view. If you press and hold there, you want
 // to get the text editing magnifier cursor, instead of canceling the
 // touch in the text input element.
+//
+// Ditto for UISlider and UISwitch: if the table view eats the drag gesture,
+// they feel broken. Feel free to add your own exceptions if you have custom
+// controls that require swiping or dragging to function.
 
 final class ControlContainableScrollView: UIScrollView {
 
     override func touchesShouldCancel(in view: UIView) -> Bool {
-        if view is UIControl && !(view is UITextInput) {
+        if view is UIControl
+            && !(view is UITextInput)
+            && !(view is UISlider)
+            && !(view is UISwitch) {
             return true
         }
 
@@ -34,7 +41,10 @@ final class ControlContainableScrollView: UIScrollView {
 final class ControlContainableTableView: UITableView {
 
     override func touchesShouldCancel(in view: UIView) -> Bool {
-        if view is UIControl && !(view is UITextInput) {
+        if view is UIControl
+            && !(view is UITextInput)
+            && !(view is UISlider)
+            && !(view is UISwitch) {
             return true
         }
 
@@ -46,7 +56,10 @@ final class ControlContainableTableView: UITableView {
 final class ControlContainableCollectionView: UICollectionView {
 
     override func touchesShouldCancel(in view: UIView) -> Bool {
-        if view is UIControl && !(view is UITextInput) {
+        if view is UIControl
+            && !(view is UITextInput)
+            && !(view is UISlider)
+            && !(view is UISwitch) {
             return true
         }
 
