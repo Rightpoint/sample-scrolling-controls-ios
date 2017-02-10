@@ -23,13 +23,24 @@ import UIKit
 // they feel broken. Feel free to add your own exceptions if you have custom
 // controls that require swiping or dragging to function.
 
+protocol ScrollAllowingElement {}
+
+protocol ScrollDisallowingElement {}
+
+extension UIControl: ScrollAllowingElement {}
+
+extension UISlider: ScrollDisallowingElement {}
+
+extension UISwitch: ScrollDisallowingElement {}
+
+extension UITextField: ScrollDisallowingElement {}
+
+extension UITextView: ScrollDisallowingElement {}
+
 final class ControlContainableScrollView: UIScrollView {
 
     override func touchesShouldCancel(in view: UIView) -> Bool {
-        if view is UIControl
-            && !(view is UITextInput)
-            && !(view is UISlider)
-            && !(view is UISwitch) {
+        if view is ScrollAllowingElement && !(view is ScrollDisallowingElement) {
             return true
         }
 
@@ -41,10 +52,7 @@ final class ControlContainableScrollView: UIScrollView {
 final class ControlContainableTableView: UITableView {
 
     override func touchesShouldCancel(in view: UIView) -> Bool {
-        if view is UIControl
-            && !(view is UITextInput)
-            && !(view is UISlider)
-            && !(view is UISwitch) {
+        if view is ScrollAllowingElement && !(view is ScrollDisallowingElement) {
             return true
         }
 
@@ -56,10 +64,7 @@ final class ControlContainableTableView: UITableView {
 final class ControlContainableCollectionView: UICollectionView {
 
     override func touchesShouldCancel(in view: UIView) -> Bool {
-        if view is UIControl
-            && !(view is UITextInput)
-            && !(view is UISlider)
-            && !(view is UISwitch) {
+        if view is ScrollAllowingElement && !(view is ScrollDisallowingElement) {
             return true
         }
 
